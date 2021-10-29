@@ -4,7 +4,7 @@ type ContainerProps = {
     done: boolean;
 }
 
-export const Container = styled.div(( {done} )=> (
+export const Container = styled.div(( {done}: ContainerProps )=> (
     `
     display: flex;
     background-color: #20212C;
@@ -21,7 +21,7 @@ export const Container = styled.div(( {done} )=> (
 
     label { 
         color: #CCC;
-        text-decoration: line-through;
+        text-decoration: ${done ? 'line-through' : 'initial'};
     }
 `
 ));
