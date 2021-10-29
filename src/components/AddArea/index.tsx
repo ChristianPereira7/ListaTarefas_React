@@ -10,8 +10,9 @@ export const AddArea = ({ onEnter }: Props) => {
     const [inputText, setInputText] = useState('');
 
     const handleKeyUp = (e: KeyboardEvent) => {
-        if(e.code === ' Enter' && InputText !== '') {
+        if(e.code === 'Enter' && inputText !== '') {
             onEnter(inputText);
+            setInputText('');
         }
     }
 
@@ -23,7 +24,7 @@ export const AddArea = ({ onEnter }: Props) => {
                 type="text"
                 placeholder="Adicione uma tarefa"
                 value={inputText}
-                onChange={e = setInputText(e.target.value)}
+                onChange={e => setInputText(e.target.value)}
                 onKeyUp={handleKeyUp}
             />
         </C.Container>
